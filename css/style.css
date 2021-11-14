@@ -109,7 +109,7 @@ html,body{height:  100%;}
 
 	float: right;
 	padding: 15px 50px;
-	overflow-y: auto;
+	overflow-y: hidden;
 }
 
 .main__row {
@@ -160,7 +160,7 @@ html,body{height:  100%;}
 }
 
 .player {
-	width: 96%;
+	width: 97.3%;
 	padding: 20px;
 	height: 110px;
 	position: absolute;
