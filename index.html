@@ -124,7 +124,7 @@
 					<h2>Minhas músicas</h2>
 				</div>
 
-				<div class="main__col1" data-image="img/Rock.jfif" data-artist="Rock 80/90" data-song="Making Love" data-file="assets/AirSupplyMakingLove.mp3">
+				<div class="main__col1" data-image="img/Rock.jfif" data-artist="Rock 80/90" data-song="Making Love" data-file="assets/AirSupplyMakinglove.mp3">
 					<img src="img/Rock.jfif">
 					<h3>Rock 80/90</h3>
 					<p>As melhores do rock anos 80/90</p>
@@ -154,15 +154,65 @@
 			</div>
 
 			<div class="player__controll__progress">
-				<div style="width: 10%;" class="player__controll__progress__2">
-					
-				</div>
+				<div style="width: 10%;" class="player__controll__progress__2"></div>
 			</div>
+
 		</div>
 	</div>
 
+	<audio id="audioplayer" style="position: absolute; left: 0; top: 0; z-index: -999; opacity: 0;" controls="">
+
+	</audio>
+
 	<script src="js/all.min.js"></script>
 
-	
+	<script>
+		
+		var audioPlayer = document.getElementById('audioplayer');
+		var loaded = false;
+
+		var playBtn = document.getElementById('playBtn');
+		var pauseBtn = document.getElementById('pauseBtn');
+
+		pauseBtn.addEventListener('click',(e) =>{
+			e.preventDefault();
+
+			playBtn.style.display = "inline";
+			pauseBtn.style.display = "none";
+			audioPlayer.pause();
+
+			return false;
+		});
+
+		const playSong = (file) => {
+			if (loaded == false){
+				audioPlayer.innerHTML = `<source src="`+file+`" type="audio/mp3" />`;
+				loaded = true;
+			}
+
+			audioPlayer.play();
+
+			playBtn.style.display = "none";
+			pauseBtn.style.display = "inline";
+		}
+
+		document.querySelectorAll('.main__col1').forEach(item => {
+
+			item.addEventListener('click', event => {
+				let image = item.getAttribute('data-Image');
+				let artist = item.getAttribute('data-Artist');
+				let song = item.getAttribute('data-Song');
+				let file = item.getAttribute('data-File');
+
+				let playerArtistComponent = document.getElementsByClassName('player__artist');
+
+				playerArtistComponent[0].innerHTML = `<img src="`+image+`" />
+				<h3>`+artist+`<br/><span>`+song+`</span></h3>`;
+
+				playSong(file);
+			})
+		});
+
+	</script>
 </body>
 </html>
