@@ -37,27 +37,27 @@
 			</div>
 			
 			<div class="sidebar__playlists">
-				<a href="">Playlist 1</a>
-				<a href="">Playlist 1</a>
-				<a href="">Playlist 1</a>
-				<a href="">Playlist 1</a>
-				<a href="">Playlist 1</a>
+				<a href="">Playlist Rock 80</a>
+				<a href="">Playlist Rock 90</a>
+				<a href="">Playlist Rock 00</a>
+				<a href="">Playlist Classicos</a>
+				<a href="">Playlist Nacionais</a>
+			</div>
+
+			<div class="sidebar__playlists">
+				<a href="">Playlist Sertanejo</a>
+				<a href="">Playlist Pagode</a>
+				<a href="">Playlist Rock nacional</a>
+				<a href="">Playlist Internacionais</a>
+				<a href="">Playlist Pop</a>
 			</div>
 
 			<div class="sidebar__playlists">
 				<a href="">Playlist 1</a>
-				<a href="">Playlist 1</a>
-				<a href="">Playlist 1</a>
-				<a href="">Playlist 1</a>
-				<a href="">Playlist 1</a>
-			</div>
-
-			<div class="sidebar__playlists">
-				<a href="">Playlist 1</a>
-				<a href="">Playlist 1</a>
-				<a href="">Playlist 1</a>
-				<a href="">Playlist 1</a>
-				<a href="">Playlist 1</a>
+				<a href="">Playlist 2</a>
+				<a href="">Playlist 3</a>
+				<a href="">Playlist 4</a>
+				<a href="">Playlist 5</a>
 			</div>
 
 		</div>
@@ -154,7 +154,7 @@
 			</div>
 
 			<div class="player__controll__progress">
-				<div style="width: 10%;" class="player__controll__progress__2"></div>
+				<div style="width: 0%;" class="player__controll__progress__2"></div>
 			</div>
 
 		</div>
@@ -180,6 +180,16 @@
 			playBtn.style.display = "inline";
 			pauseBtn.style.display = "none";
 			audioPlayer.pause();
+
+			return false;
+		});
+
+		playBtn.addEventListener('click',(e) =>{
+			e.preventDefault();
+
+			playBtn.style.display = "none";
+			pauseBtn.style.display = "inlane";
+			audioPlayer.play();
 
 			return false;
 		});
