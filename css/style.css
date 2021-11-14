@@ -9,7 +9,7 @@ html,body{height:  100%;}
 
 .sidebar {
 	float: left;
-	width: 250px;
+	width: 230px;
 	padding: 10px 10px;
 	height: 100%;
 	overflow-y: auto;
@@ -96,6 +96,65 @@ html,body{height:  100%;}
 	text-decoration: none;
 }
 
-sidebar__playlists a:houver{
+.sidebar__playlists a:houver{
 	color: white;
+}
+
+/* Parte principal do App */
+
+.main {
+	width: calc(100% - 350px);
+	background-color: rgb(30, 30, 30);
+	height: 100%;
+
+	float: right;
+	padding: 15px 50px;
+	overflow-y: auto;
+}
+
+.main__row {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+.main__wraper {
+	padding-bottom: 200px;
+}
+
+.main__row__tittle {
+	width: 100%;
+}
+
+.main__row__tittle h2{
+	color: white;
+}
+
+.main__col1 {
+	cursor: pointer;
+	width: 9%;
+	margin-right: 1%;
+	margin-top: 20px;
+	background-color: #282828;
+	border-radius: 8px;
+	padding: 10px;
+	text-align: center;
+}
+.main__wraper img {
+	width: 100px;
+	height: 100px;
+}
+
+.main__col1 h3 {
+	color: white;
+	margin: 8px 0;
+}
+
+.main__col1 p {
+	color: rgb(100, 100, 100);
+	margin: 8px 0;
+	font-size: 13px;
+	text-align: left;
 }
